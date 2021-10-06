@@ -1,17 +1,15 @@
 <template>
   <div class>
     <div class>
-      <h1 style="text-align:center">Merge Tags
-      </h1>
+      <h1 style="text-align: center">Merge Tags</h1>
     </div>
-     <div class="editorx_body">
-      <div class id="codex-editor"/>
-      <div class id="tag_opt"/>
-      <div class id="tag_opt2"/>
-    </div
     <div class="editorx_body">
-      <pre>{{value}}</pre>
+      <div class id="codex-editor" />
     </div>
+    <div class="editorx_body">
+      <pre>{{ value }}</pre>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -39,9 +37,10 @@ export default {
       editor.save().then((savedData) => {
         console.log(savedData);
         this.value = savedData;
-        tag_content: "tag-editor"
+        tag_content: "tag-editor";
         //self.handleChange(savedData)
       });
+    },
     myEditor: function () {
       window.editor = new EditorJS({
         holder: "codex-editor",
@@ -54,10 +53,10 @@ export default {
           header: {
             class: Header,
             config: {
-              placeholder: 'Subject',
+              placeholder: "Subject",
               levels: [2, 3, 4],
               defaultLevel: 3,
-            }
+            },
           },
           table: {
             class: Table,
@@ -102,7 +101,7 @@ export default {
   /* width: 62%;
   margin-left: 15%; */
   width: 20%;
-  margin-top:10%;
+  margin-top: 10%;
   margin-left: 20%;
   border: 2px solid #f1f3f5;
   box-sizing: border-box;
@@ -112,7 +111,7 @@ export default {
   /* width: 62%;
   margin-left: 15%; */
   width: 20%;
-  margin-top:10%;
+  margin-top: 10%;
   margin-left: 60%;
   border: 2px solid #f1f3f5;
   box-sizing: border-box;

@@ -1,18 +1,41 @@
 <template>
   <div class>
     <div class>
-      <h1 style="text-align:center">Mood Choice
-      </h1>
+      <h1 style="text-align: center">Mood Choice</h1>
     </div>
-    <button class='colorChoice' style="background-color:yellow;" type="button" name="button" @click="setColor("yellow")">Energized</button>
-    <button class='colorChoice' style="background-color:green" type="button" name="button" @click="setColor("green")">Relaxed</button>
-    <button class='colorChoice' style="background-color:blue" type="button" name="button" @click="setColor("blue")"></button>
-     <div class="editorx_body>
-      <div class id="codex-editor"/>
-    </div
     <div class="editorx_body">
-      <pre>{{color}}</pre>
+      <div class id="codex-editor" />
     </div>
+    <button
+      class="colorChoice"
+      style="background-color: yellow"
+      type="button"
+      name="button"
+      @click="setColor('yellow')"
+    >
+      Energized
+    </button>
+    <button
+      class="colorChoice"
+      style="background-color: green"
+      type="button"
+      name="button"
+      @click="setColor('green')"
+    >
+      Relaxed
+    </button>
+    <button
+      class="colorChoice"
+      style="background-color: blue"
+      type="button"
+      name="button"
+      @click="setColor('blue')"
+    >
+      Friendly
+    </button>
+    <div class="editorx_body" />
+    <pre>{{ color }}</pre>
+  </div>
 </template>
 
 <script>
@@ -20,6 +43,7 @@ import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import Paragraph from "@editorjs/paragraph";
 import List from "@editorjs/list";
+import Table from "@editorjs/checklist";
 export default {
   data() {
     return {
@@ -35,23 +59,20 @@ export default {
       });
     },
     setColor: function (color) {
-      editor.save().then((color) =>  {
-      console.log(color)
-      if(color == "yellow"){
-        this.color == "yellow";
-      }
-      else if (color == "green"){
-        this.color == "green"
-      }
-      else if (color == "blue"){
-        this.color == "blue"
-      }
-      else{
-        this.color == "white"
-      }
-      document.getElementByClass("editorx_body").style.background = color;
-      })
-     },
+      editor.save().then((color) => {
+        console.log(color);
+        if (color === "yellow") {
+          this.color === "yellow";
+        } else if (color == "green") {
+          this.color === "green";
+        } else if (color === "blue") {
+          this.color == "blue";
+        } else {
+          this.color == "white";
+        }
+        document.getElementByClass("editorx_body").style.background = color;
+      });
+    },
     myEditor: function () {
       window.editor = new EditorJS({
         holder: "codex-editor",

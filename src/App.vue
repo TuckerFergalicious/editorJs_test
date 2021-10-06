@@ -7,15 +7,14 @@
 <script>
 // import HelloWorld from "./components/HelloWorld";
 import moodChoice from "./components/moodChoice";
-import mergeTags from "./components/mergeTags
+import mergeTags from "./components/mergeTags";
 export default {
   name: "App",
   components: {
     // HelloWorld,
     moodChoice,
     mergeTags,
-  }
-
+  },
 };
 </script>
 
